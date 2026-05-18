@@ -1,13 +1,13 @@
 import Button from "./Button"
 import { useContext } from "react"
 import { AuthContext } from "../../AuthProvider"
-import { Link , useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Header = () => {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const handleLogout= () =>{
+  const handleLogout = () => {
     localStorage.removeItem('accessToken')
     localStorage.removeItem('refreshToken')
     setIsLoggedIn(false)
@@ -21,7 +21,14 @@ const Header = () => {
         <div>
           {
             isLoggedIn ? (
-              <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+
+              <>
+
+                <Button url="/dashboard" text="Dashboard" class="btn-info " />
+                &nbsp;
+                <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+
+              </>
             ) : (
               <>
                 <Button url="/login" text="Login" class="btn-outline-info " />

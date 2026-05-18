@@ -16,7 +16,7 @@ const Main = () => {
                 stock prices by analyzing 100-day and 200-day moving averages.
             </p>
 
-            <Button text="Login" class="btn-outline-info "/>
+            <Button text="Explore Now" class="btn-outline-info " url="/dashboard"/>
         </div>
       </div>
       
